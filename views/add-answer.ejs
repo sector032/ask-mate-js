@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ask an answer</title>
+	</head>
+	<body>
+		<h1>Please add an answer to question <%= questionId %></h1>
+		<form action="/question/<%= questionId%>/new-answer" method="POST">
+			<input type="text" name="message" />
+			<button type="submit">Submit</button>
+		</form>
+		<h2><a href="/">Back</a></h2>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Ask-Mate Question></h1>
+
+		<div ="table">
+			<table border="5px">
+				<th>ID</th>
+				<th>Submission Time</th>
+				<th>View Number</th>
+				<th>Vote Number</th>
+				<th>Title</th>
+				<th>Message</th>
+				<tr>
+					<td><%= question.id %></td>
+					<td><%= question.date %></td>
+					<td><%= question.viewNumber %></td>
+					<td><%= question.voteNumber %></td>
+					<td><%= question.title %></td>
+					<td><%= question.message %></td>
+				</tr>
+			</table>
+			<h2> Answers </h2> </br>
+			<table border="5px">
+				<th>ID</th>
+				<th>Submission Time</th>
+				<th>Vote Number</th>
+				<th>Question ID</th>
+				<th>Message</th>
+				<th>Image</th>
+				<% for(var i=0; i < answers.length; i++) { %>
+				<tr>
+					<td><%= answers[i].id %></td>
+					<td><%= answers[i].submission_time %></td>
+					<td><%= answers[i].vote_number %></td>
+					<td><%= answers[i].question_id %></td>
+					<td><%= answers[i].message %></td>
+					<td><%= answers[i].image %></td>
+				</tr>
+				<% } %>
+			</table>
+			<h2><a href="/question/<%= question.id %>/new-answer">Add Answer</a></h2>
+		</div>
+	</body>
+</html>

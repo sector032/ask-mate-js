@@ -1,0 +1,10 @@
+id,date,viewNumber,voteNumber,title,message,image
+,,,2,Wordpress loading multiple jQuery Versions,"I developed a plugin that uses the jquery booklet plugin (http://builtbywill.com/booklet/#/) this plugin binds a function to $ so I cann call $('.myBook').booklet();
+
+I could easy managing the loading order with wp_enqueue_script so first I load jquery then I load booklet so everything is fine.
+
+BUT in my theme i also using jquery via webpack so the loading order is now following:
+
+jquery
+booklet
+app.js (bundled file with webpack, including jquery)",

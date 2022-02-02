@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Ask-Mate 1</h1>
+		<h2><a href="/add">Add Question</a></h2>
+		<div ="table">
+			<table border="5px">
+				<th>ID</th>
+				<th>Submission Time</th>
+				<th>View Number</th>
+				<th>Vote Number</th>
+				<th>Title</th>
+				<th>Message</th>
+				<th>Delete</th>
+				<%= questions.length%>
+				<% for(let question of questions ) { %>
+					<%= question %> 
+				<tr>
+					<td><a href="/question/<%= question.id %>"><%= question.id %></a></td>
+					<td><%= question.date %></td>
+					<td><%= question.viewNumber %></td>
+					<td>
+						<%= question.voteNumber %> <a href="/">Up</a></br><a href="/">Down</a>
+					</td>
+					<td><%= question.title %></td>
+					<td><%= question.message %></td>
+					<td><a href="/delete/<%= question.id %>">Deleted</a></td>
+				</tr>
+				<% } %>
+			</table>
+		</div>
+	</body>
+</html>
